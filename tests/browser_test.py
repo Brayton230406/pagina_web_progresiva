@@ -77,15 +77,17 @@ def run(base_url):
   page.locator('[data-tab="explore"]').click();page.locator('#search-source').select_option('google');page.locator('#search').fill('prueba');page.locator('#search-form').get_by_role('button').click()
   expect(page.locator('#catalog .book-card')).to_have_count(1)
   context.set_offline(False);page.reload();expect(page.locator('#catalog .book-card')).to_have_count(8)
-  # Móvil pequeño, móvil, tableta vertical/horizontal y escritorio.
-  for width,height in [(320,740),(375,812),(768,1024),(820,1180),(1024,768),(1440,1100)]:
+  # Móviles, tabletas, MacBook Pro y escritorios grandes.
+  for width,height in [(320,740),(375,812),(768,1024),(820,1180),(1024,768),(1440,1100),(1512,982),(1728,1117),(1920,1080),(2560,1440),(3024,1964)]:
    page.set_viewport_size({'width':width,'height':height})
    assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),f'Desbordamiento horizontal a {width}px'
+   assert page.locator('main').evaluate('(main)=>Math.abs(main.getBoundingClientRect().right-document.documentElement.clientWidth)<=1'),f'Franja vacía a la derecha a {width}px'
    page.locator('[data-tab="sources"]').click()
    assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),f'Fuentes desbordadas a {width}px'
    page.locator('[data-tab="library"]').click()
    assert page.evaluate('document.documentElement.scrollWidth <= innerWidth'),f'Biblioteca desbordada a {width}px'
    page.locator('[data-tab="explore"]').click()
+   if width in [1728,2560]:page.screenshot(path=f'/tmp/lectora-desktop-{width}.png',full_page=True)
    page.locator('[data-id="don-quijote"] .cover-open').first.click()
    box=page.locator('#book-dialog').bounding_box();assert box['x']>=0 and box['x']+box['width']<=width+1
    page.locator('#read-book').click();expect(page.locator('#reader-text')).not_to_be_empty()

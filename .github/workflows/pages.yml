@@ -34,7 +34,7 @@ jobs:
         run: python -m pip install -r tests/requirements.txt
       - name: Instalar Chromium
         run: python -m playwright install --with-deps chromium
-      - name: Probar funciones y pantallas de 320 a 1440 px bajo la ruta de Pages
+      - name: Probar funciones y pantallas de 320 a 3024 px bajo la ruta de Pages
         run: python tests/browser_test.py
       - name: Guardar capturas si falla una prueba
         if: failure()

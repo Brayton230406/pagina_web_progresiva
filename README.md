@@ -113,7 +113,7 @@ La aplicación usa rutas relativas y admite GitHub Pages bajo `/pagina_web_progr
 
 Dirección de GitHub Pages: https://brayton230406.github.io/pagina_web_progresiva/
 
-El workflow `.github/workflows/pages.yml` se ejecuta con cada push/PR a `main` y permite ejecución manual. Primero valida las fuentes, los EPUB y la caché; después ejecuta Chromium con la aplicación empaquetada bajo la misma subruta de Pages. Comprueba las pantallas de 320, 375, 768, 820, 1024 y 1440 px, incluida la biblioteca, las fuentes, la ficha y el lector. Solo publica cuando todas las pruebas pasan; las PR se validan sin desplegar. Las respuestas de Google se simulan en CI para que las cuotas externas no produzcan fallos ajenos al código.
+El workflow `.github/workflows/pages.yml` se ejecuta con cada push/PR a `main` y permite ejecución manual. Primero valida las fuentes, los EPUB y la caché; después ejecuta Chromium con la aplicación empaquetada bajo la misma subruta de Pages. Comprueba las pantallas de 320, 375, 768, 820, 1024, 1440, 1512, 1728, 1920, 2560 y 3024 px, incluida la biblioteca, las fuentes, la ficha y el lector. También verifica que el contenido principal llegue al borde derecho del área visible, sin una franja vacía en pantallas anchas. Solo publica cuando todas las pruebas pasan; las PR se validan sin desplegar. Las respuestas de Google se simulan en CI para que las cuotas externas no produzcan fallos ajenos al código.
 
 `python3 scripts/build_site.py` crea `dist/` con una lista explícita de recursos públicos. El artefacto de Pages excluye las pruebas, el historial Git, la configuración de CI y los archivos locales. Para reproducir las comprobaciones:
 
