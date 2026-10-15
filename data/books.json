@@ -1,0 +1,66 @@
+[
+  {
+    "id": "don-quijote",
+    "title": "Don Quijote de la Mancha",
+    "author": "Miguel de Cervantes",
+    "category": "Ficción",
+    "pages": 0,
+    "description": "Un caballero que ve gigantes donde hay molinos y un escudero con los pies en la tierra. Lee la obra completa en español, con sus dos partes, o descarga la edición digital de Project Gutenberg."
+  },
+  {
+    "id": "lazarillo",
+    "title": "Lazarillo de Tormes",
+    "author": "Anónimo",
+    "category": "Ficción",
+    "pages": 0,
+    "description": "La historia de Lázaro, sus amos y su ingenio para sobrevivir. Una obra esencial de la novela picaresca, disponible completa en español para leer y descargar."
+  },
+  {
+    "id": "el-principito",
+    "title": "El principito",
+    "author": "Antoine de Saint-Exupéry",
+    "category": "Ficción",
+    "pages": 96,
+    "description": "Un pequeño viaje para volver a mirar lo esencial."
+  },
+  {
+    "id": "habitos",
+    "title": "Hábitos atómicos",
+    "author": "James Clear",
+    "category": "Bienestar",
+    "pages": 336,
+    "description": "Pequeños cambios, resultados extraordinarios."
+  },
+  {
+    "id": "clean-code",
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "category": "Tecnología",
+    "pages": 464,
+    "description": "El arte de escribir código claro y mantenible."
+  },
+  {
+    "id": "cien-anos",
+    "title": "Cien años de soledad",
+    "author": "Gabriel García Márquez",
+    "category": "Ficción",
+    "pages": 496,
+    "description": "Las historias de Macondo y la familia Buendía."
+  },
+  {
+    "id": "diseno",
+    "title": "El diseño de las cosas cotidianas",
+    "author": "Don Norman",
+    "category": "Diseño",
+    "pages": 368,
+    "description": "Una mirada a los objetos y a quienes los utilizan."
+  },
+  {
+    "id": "breve",
+    "title": "Breve historia del tiempo",
+    "author": "Stephen Hawking",
+    "category": "Ciencia",
+    "pages": 256,
+    "description": "Un recorrido por las grandes preguntas del universo."
+  }
+]

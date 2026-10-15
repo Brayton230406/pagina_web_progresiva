@@ -1,0 +1,71 @@
+name: Validar y publicar Lectora
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: PWA, descargas y responsividad
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v6
+      - name: Preparar Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: tests/requirements.txt
+      - name: Validar catálogo, EPUB y recursos offline
+        run: python tests/check_static.py
+      - name: Instalar pruebas
+        run: python -m pip install -r tests/requirements.txt
+      - name: Instalar Chromium
+        run: python -m playwright install --with-deps chromium
+      - name: Probar funciones y pantallas de 320 a 1440 px bajo la ruta de Pages
+        run: python tests/browser_test.py
+      - name: Guardar capturas si falla una prueba
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: capturas-de-pruebas
+          path: /tmp/lectora-*.png
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Preparar artefacto de publicación
+        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    name: Publicar en GitHub Pages
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+      - name: Publicar versión validada
+        id: deployment
+        uses: actions/deploy-pages@v4
