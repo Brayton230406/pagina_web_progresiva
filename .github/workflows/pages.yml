@@ -17,7 +17,7 @@ concurrency:
 jobs:
   validate:
     name: PWA, descargas y responsividad
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
       - name: Descargar código
@@ -38,7 +38,7 @@ jobs:
         run: python tests/browser_test.py
       - name: Guardar capturas si falla una prueba
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: capturas-de-pruebas
           path: /tmp/lectora-*.png
@@ -46,15 +46,16 @@ jobs:
           retention-days: 7
       - name: Preparar artefacto de publicación
         if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
         with:
           path: dist
+          include-hidden-files: true
 
   deploy:
     name: Publicar en GitHub Pages
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: validate
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       contents: read
