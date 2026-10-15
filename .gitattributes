@@ -1,0 +1,5 @@
+# Conservar los archivos originales de Project Gutenberg sin normalizarlos.
+books/*.txt -text -whitespace
+books/*.epub binary
+vendor/* -whitespace
+data/*.csv text eol=lf

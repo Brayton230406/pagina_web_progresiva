@@ -111,4 +111,3 @@ if __name__=='__main__':
    worker=threading.Thread(target=server.serve_forever,daemon=True);worker.start()
    try:run(f'http://127.0.0.1:{server.server_port}/pagina_web_progresiva/')
    finally:server.shutdown();server.server_close();worker.join()
-
