@@ -16,6 +16,54 @@
     "description": "La historia de Lázaro, sus amos y su ingenio para sobrevivir. Una obra esencial de la novela picaresca, disponible completa en español para leer y descargar."
   },
   {
+    "id": "marianela",
+    "title": "Marianela",
+    "author": "Benito Pérez Galdós",
+    "category": "Ficción",
+    "pages": 0,
+    "description": "Marianela acompaña a Pablo, un joven ciego, por los paisajes de las minas. La posibilidad de que él recupere la vista transforma su relación y abre preguntas sobre la belleza, el afecto y la desigualdad."
+  },
+  {
+    "id": "novelas-ejemplares",
+    "title": "Novelas ejemplares",
+    "author": "Miguel de Cervantes",
+    "category": "Ficción",
+    "pages": 0,
+    "description": "Una colección de historias sobre el amor, el ingenio, el engaño y la vida cotidiana. Esta edición reúne las Novelas ejemplares de Cervantes y conserva el contenido y los créditos de Project Gutenberg."
+  },
+  {
+    "id": "sombrero-tres-picos",
+    "title": "El sombrero de tres picos",
+    "author": "Pedro Antonio de Alarcón",
+    "category": "Ficción",
+    "pages": 0,
+    "description": "Un molinero, su esposa y un corregidor protagonizan una cadena de enredos y equívocos en Andalucía. Una novela breve de humor, astucia y crítica al abuso de poder."
+  },
+  {
+    "id": "trafalgar",
+    "title": "Trafalgar",
+    "author": "Benito Pérez Galdós",
+    "category": "Ficción",
+    "pages": 0,
+    "description": "Gabriel de Araceli narra su experiencia en la batalla de Trafalgar. La primera entrega de los Episodios nacionales combina una aventura de aprendizaje con la memoria de un acontecimiento histórico."
+  },
+  {
+    "id": "la-regenta",
+    "title": "La Regenta",
+    "author": "Leopoldo Alas, Clarín",
+    "category": "Ficción",
+    "pages": 0,
+    "description": "En la ciudad de Vetusta, Ana Ozores busca una salida a su soledad mientras la rodean las expectativas sociales y las contradicciones de su entorno. Una gran novela del realismo español."
+  },
+  {
+    "id": "pepita-jimenez",
+    "title": "Pepita Jiménez",
+    "author": "Juan Valera",
+    "category": "Ficción",
+    "pages": 0,
+    "description": "El encuentro con Pepita transforma las certezas de Luis de Vargas. Cartas y narración dan forma a una historia sobre los sentimientos, la vocación y las decisiones personales."
+  },
+  {
     "id": "el-principito",
     "title": "El principito",
     "author": "Antoine de Saint-Exupéry",

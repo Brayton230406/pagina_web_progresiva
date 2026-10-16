@@ -16,7 +16,7 @@ Abrir http://127.0.0.1:8080. No abrir index.html con file://: los módulos, AJAX
 
 ## Funciones
 
-- Catálogo de ocho libros, búsqueda instantánea, filtros por categoría y filtro de descargas.
+- Catálogo de catorce libros, búsqueda instantánea, filtros por categoría y filtro de descargas.
 - Biblioteca personal: guardar, quitar, estado de lectura, progreso y notas.
 - Persistencia real en IndexedDB: stores `books`, `settings`, `cache`. Las operaciones se confirman al terminar la transacción.
 - Exportar/restaurar biblioteca JSON; la importación valida todos los registros antes de escribirlos en una sola transacción. Fusiona por ID.
@@ -25,7 +25,7 @@ Abrir http://127.0.0.1:8080. No abrir index.html con file://: los módulos, AJAX
 - PWA: manifiesto, iconos PNG y maskable, service worker y caché de todos los recursos locales, incluidas dependencias y WebAssembly.
 - Diseño adaptable, etiquetas accesibles, modal nativo con Escape y reducción de movimiento.
 
-Dos clásicos completos (Don Quijote y Lazarillo de Tormes) se incluyen en EPUB y TXT para descarga directa y lectura local con paginación, ajuste de letra, modo nocturno y posición guardada automáticamente. Los archivos conservan los créditos y términos de Project Gutenberg. Las otras seis fichas ofrecen acceso al proveedor; no incluyen un archivo del libro completo. Las búsquedas de Google utilizan sus portadas reales y solo muestran descargas cuando existe un `downloadLink` en `accessInfo`; no confunden un token DRM con un EPUB/PDF.
+Ocho clásicos completos (Don Quijote, Lazarillo de Tormes, Marianela, Novelas ejemplares, El sombrero de tres picos, Trafalgar, La Regenta y Pepita Jiménez) se incluyen en EPUB y TXT para descarga directa y lectura local con paginación, ajuste de letra, modo nocturno y posición guardada automáticamente. Los archivos conservan los créditos y términos de Project Gutenberg. Las otras seis fichas ofrecen acceso al proveedor; no incluyen un archivo del libro completo. Las búsquedas de Google utilizan sus portadas reales y solo muestran descargas cuando existe un `downloadLink` en `accessInfo`; no confunden un token DRM con un EPUB/PDF.
 
 La biblioteca se conserva en el navegador y origen utilizados. No hay cuentas ni sincronización de notas entre dispositivos. Exportar un respaldo permite trasladarla; borrar los datos del sitio elimina la copia local. Las portadas locales son ilustraciones vectoriales originales con motivos específicos para cada título.
 
@@ -74,7 +74,7 @@ El PDF se emplea como material teórico; su cuestionario no se interpreta como u
 - `vendor/`: jQuery 3.7.1 (MIT), sql.js 1.13.0 (MIT) y WebAssembly. Los encabezados de distribución se conservan. sql.js: https://github.com/sql-js/sql.js ; jQuery: https://jquery.com/license/
 - `model/resources.js`: ediciones incluidas, validación de enlaces y adaptación de acceso a Google Books.
 - `controller/reader.js`: lector local y persistencia de posición/preferencias.
-- `books/`: archivos completos EPUB/TXT de los dos clásicos.
+- `books/`: archivos completos EPUB/TXT de los ocho clásicos.
 - `sw.js`, `manifest.webmanifest`, `assets/`: PWA y portadas ilustradas.
 - `.github/workflows/pages.yml`: publicación en GitHub Pages desde main.
 
@@ -96,10 +96,10 @@ Resultado comprobado el 15 de octubre de 2026: pruebas estáticas e integración
 
 Lista manual para Chrome, Edge u Opera:
 
-1. Abrir localhost, comprobar ocho tarjetas y ausencia de errores de consola.
+1. Abrir localhost, comprobar catorce tarjetas y ausencia de errores de consola.
 2. Guardar un libro, escribir notas, cambiar progreso, recargar y verificar persistencia y contadores.
 3. Editar a Terminado y comprobar progreso 100%; exportar y restaurar el respaldo.
-4. Cargar JSON, CSV, XML y SQLite: deben mostrar los mismos ocho libros (SQLite ordena por título).
+4. Cargar JSON, CSV, XML y SQLite: deben mostrar los mismos catorce libros (SQLite ordena por título).
 5. Abrir DevTools > Application y comprobar manifest, service worker activo, Cache Storage e IndexedDB.
 6. Tras la primera carga, activar Network > Offline y recargar: catálogo, biblioteca, notas y SQLite deben funcionar. Las búsquedas remotas requieren conexión o una consulta anterior en caché.
 7. Configurar una API key propia, buscar en Google Books, guardar un resultado y repetir la búsqueda sin conexión.
@@ -133,3 +133,11 @@ La prueba de navegador inicia y detiene su propio servidor temporal. Para probar
 - Lazarillo de Tormes: https://www.gutenberg.org/ebooks/320 — obra anónima en español.
 
 Se descargaron de los enlaces oficiales TXT UTF-8 y EPUB3 el 15 de octubre de 2026. Los archivos conservan la licencia y los créditos originales. Las fichas de Gutenberg identifican ambas ediciones como dominio público en EE. UU.; sus términos incluyen indicaciones para otros países. No se incluyen archivos completos de los títulos contemporáneos del catálogo.
+
+Ampliación del 16 de octubre de 2026: se incorporaron seis ediciones españolas de Project Gutenberg, con EPUB/TXT íntegros, portadas vectoriales originales y precarga offline. `books/editions.json` documenta las ocho ediciones completas, sus fuentes y las huellas SHA-256 de todos los archivos. Las pruebas descargan ambos formatos de cada título nuevo sin red, verifican su huella y comprueban lectura, notas y recuperación de posición al recargar. La preparación inicial de la PWA requiere descargar aproximadamente 13 MB de libros una vez; espera al indicador de disponibilidad offline.
+- Marianela: https://www.gutenberg.org/ebooks/17340
+- Novelas ejemplares: https://www.gutenberg.org/ebooks/61202
+- El sombrero de tres picos: https://www.gutenberg.org/ebooks/29506
+- Trafalgar: https://www.gutenberg.org/ebooks/16961
+- La Regenta: https://www.gutenberg.org/ebooks/17073
+- Pepita Jiménez: https://www.gutenberg.org/ebooks/17223

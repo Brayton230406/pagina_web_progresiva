@@ -36,7 +36,7 @@ with tempfile.TemporaryDirectory(prefix='lectora-upgrade-') as folder:
             browser=p.chromium.launch()
             page=browser.new_page(viewport={'width':2560,'height':1440})
             page.goto(f'http://127.0.0.1:{server.server_port}/')
-            expect(page.locator('#catalog .book-card')).to_have_count(8)
+            expect(page.locator('#catalog .book-card')).to_have_count(14)
             page.wait_for_function('navigator.serviceWorker.controller !== null')
             assert page.locator('main').evaluate('(m)=>m.getBoundingClientRect().right')==1874
             page.locator('[data-id="don-quijote"] .cover-open').first.click()
@@ -49,7 +49,7 @@ with tempfile.TemporaryDirectory(prefix='lectora-upgrade-') as folder:
               const worker=r.installing||r.waiting;
               if(worker&&worker.state!=='activated')await new Promise(resolve=>worker.addEventListener('statechange',()=>{if(worker.state==='activated')resolve();}));
             }""")
-            page.reload();expect(page.locator('#catalog .book-card')).to_have_count(8)
+            page.reload();expect(page.locator('#catalog .book-card')).to_have_count(14)
             assert page.locator('main').evaluate('(m)=>m.getBoundingClientRect().right===document.documentElement.clientWidth'), 'La actualización siguió usando los estilos antiguos de la caché HTTP.'
             page.locator('[data-id="don-quijote"] .cover-open').first.click()
             expect(page.locator('#book-notes')).to_have_value('Conservar mi biblioteca al actualizar.')

@@ -1,0 +1,154 @@
+[
+  {
+    "id": "don-quijote",
+    "title": "Don Quijote de la Mancha",
+    "gutenberg": 2000,
+    "source": "https://www.gutenberg.org/ebooks/2000",
+    "language": "es",
+    "files": {
+      "txt": {
+        "path": "books/don-quijote.txt",
+        "bytes": 2225803,
+        "sha256": "534f41d59f7142163fa0964076ac6351845c006ea6433778be637fac6d5b04d7"
+      },
+      "epub": {
+        "path": "books/don-quijote.epub",
+        "bytes": 920553,
+        "sha256": "8ee8c3650d397da45097214f21cff57d2ce8d035dfcd6585e0096e3bb74989fa"
+      }
+    }
+  },
+  {
+    "id": "lazarillo",
+    "title": "Lazarillo de Tormes",
+    "gutenberg": 320,
+    "source": "https://www.gutenberg.org/ebooks/320",
+    "language": "es",
+    "files": {
+      "txt": {
+        "path": "books/lazarillo.txt",
+        "bytes": 131215,
+        "sha256": "0abbdbd87fa5abb4e570a34deae14a97c291a3229f079087f2fabf391be3cca7"
+      },
+      "epub": {
+        "path": "books/lazarillo.epub",
+        "bytes": 148874,
+        "sha256": "39f512f0e1f1ef3864ea7d49d52ccaa45a41540a81d0e80bcfbed9bdda08cda2"
+      }
+    }
+  },
+  {
+    "id": "marianela",
+    "title": "Marianela",
+    "gutenberg": 17340,
+    "source": "https://www.gutenberg.org/ebooks/17340",
+    "language": "es",
+    "files": {
+      "txt": {
+        "path": "books/marianela.txt",
+        "bytes": 327474,
+        "sha256": "ec6e5dbd4260583360ab7bd29738505ad5f0dfdf58db3dcbbc401c5ce4fea03f"
+      },
+      "epub": {
+        "path": "books/marianela.epub",
+        "bytes": 282405,
+        "sha256": "d39ae9f491e3f9869daaa4c38af19c038ac5ed458ac8c863e14174389f635790"
+      }
+    }
+  },
+  {
+    "id": "novelas-ejemplares",
+    "title": "Novelas ejemplares",
+    "gutenberg": 61202,
+    "source": "https://www.gutenberg.org/ebooks/61202",
+    "language": "es",
+    "files": {
+      "txt": {
+        "path": "books/novelas-ejemplares.txt",
+        "bytes": 1095769,
+        "sha256": "976f59072c3382bdc432ec840f33d507b12908dce06d051a5b92ce29fb9eaeaa"
+      },
+      "epub": {
+        "path": "books/novelas-ejemplares.epub",
+        "bytes": 519198,
+        "sha256": "eef4dae884716b48b7b4f61a1e49805b586beb79df7af2ba863efe77c42f0a6c"
+      }
+    }
+  },
+  {
+    "id": "sombrero-tres-picos",
+    "title": "El sombrero de tres picos",
+    "gutenberg": 29506,
+    "source": "https://www.gutenberg.org/ebooks/29506",
+    "language": "es",
+    "files": {
+      "txt": {
+        "path": "books/sombrero-tres-picos.txt",
+        "bytes": 464581,
+        "sha256": "b7ea9c05944d9939cfbda8b76c8be626d552514686b9efe903ccace2e549efea"
+      },
+      "epub": {
+        "path": "books/sombrero-tres-picos.epub",
+        "bytes": 287891,
+        "sha256": "1e15c25f3f8a2014ab8a0b4906809da41885df0c06a59bdaaf8294f48d88b51e"
+      }
+    }
+  },
+  {
+    "id": "trafalgar",
+    "title": "Trafalgar",
+    "gutenberg": 16961,
+    "source": "https://www.gutenberg.org/ebooks/16961",
+    "language": "es",
+    "files": {
+      "txt": {
+        "path": "books/trafalgar.txt",
+        "bytes": 332715,
+        "sha256": "38ae0f5fd7578d63b81bf873b561387802dc429cb1655db7446d5d3763cec71e"
+      },
+      "epub": {
+        "path": "books/trafalgar.epub",
+        "bytes": 3253736,
+        "sha256": "df541bd531761fcf7f473611020fafbe8ca578c94ec293b27fb601deab4e4e96"
+      }
+    }
+  },
+  {
+    "id": "la-regenta",
+    "title": "La Regenta",
+    "gutenberg": 17073,
+    "source": "https://www.gutenberg.org/ebooks/17073",
+    "language": "es",
+    "files": {
+      "txt": {
+        "path": "books/la-regenta.txt",
+        "bytes": 1889429,
+        "sha256": "29cd4c40b2a89cf643f7b3f3a53f8bbef1e67b9be204333bcb9a4dd50b61e86f"
+      },
+      "epub": {
+        "path": "books/la-regenta.epub",
+        "bytes": 845514,
+        "sha256": "54cc6d80b727951318af62870039b8a7d2277d461020f962c0ffbf07894c8221"
+      }
+    }
+  },
+  {
+    "id": "pepita-jimenez",
+    "title": "Pepita Jiménez",
+    "gutenberg": 17223,
+    "source": "https://www.gutenberg.org/ebooks/17223",
+    "language": "es",
+    "files": {
+      "txt": {
+        "path": "books/pepita-jimenez.txt",
+        "bytes": 346924,
+        "sha256": "5ac6722b1de675f7e7f9d64ed03dc5ed34565f46c86c769d6062cddf3c0ecdd4"
+      },
+      "epub": {
+        "path": "books/pepita-jimenez.epub",
+        "bytes": 197827,
+        "sha256": "679b127d67ecb51d627de2ceb42677ed7a896c9fcb5b170eef0a1df183052501"
+      }
+    }
+  }
+]
